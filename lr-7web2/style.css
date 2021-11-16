@@ -1,0 +1,305 @@
+@charset "UTF-8";
+/*
+Правильный язык для страницы +
+Правильная структура заголовков +
+Структура сайта с использованием landmarks +
+alt для изображений +
+Контраст текста относительно фона +
+Изменяемый размер текста + (строчка 131)
+Предсказуемый tab order +
+Связанные label с полями формы +
+Адекватное отображение страницы при увеличении масштаба +
+Использование skip link.
+*/
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+p, a, h1, h2, h3, h4, h5 {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+p, a, span {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1em;
+  line-height: 24px;
+  color: #967675;
+}
+
+span {
+  font-weight: 600;
+  font-size: 1em;
+  line-height: 32px;
+  color: white;
+}
+
+h1, h4, h3, h2 {
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 80px;
+  line-height: 110px;
+  color: #23242C;
+}
+
+h2 {
+  font-size: 2.4em;
+  line-height: 51px;
+}
+
+h3 {
+  font-size: 3em;
+  line-height: 64px;
+  color: #967675;
+}
+
+h4 {
+  font-size: 2.1em;
+  line-height: 32px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f1f1f5;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+}
+section {
+  margin-top: 200px;
+}
+
+.skip-link {
+  color: #3f51b5;
+  position: fixed;
+  top: -100%;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+header {
+  display: block;
+}
+header a {
+  text-decoration: underline;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+}
+.logo h3 {
+  font-size: 2em;
+}
+
+.nav {
+  width: 60%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin: 10px auto;
+}
+
+.header-title {
+  margin-top: 100px;
+}
+
+.btn-application, button {
+  border: 1px solid #967675;
+  border-radius: 6px;
+  transition: all 0.2s linear;
+  padding: 10px 50px;
+}
+
+.list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.list_item {
+  max-width: 300px;
+}
+.list_item p {
+  padding-left: 50px;
+}
+
+.image {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.image_pic {
+  min-width: 300px;
+}
+.image_title {
+  width: 400px;
+}
+
+@media (max-width: 768px) {
+  .image {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+  }
+  .image_pic {
+    min-width: 300px;
+  }
+}
+.outRange_name {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+.outRange_name p {
+  text-align: center;
+}
+.outRange_name h1, .outRange_name h2, .outRange_name h3, .outRange_name h4 {
+  text-align: center;
+}
+
+.assort {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 100px;
+}
+
+.type {
+  width: 500px;
+  min-width: 300px;
+  background-color: #F6ECE8;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+.type h3 {
+  text-align: center;
+}
+
+.newsletter {
+  background-color: #F9F2EF;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.newsletter p {
+  text-align: center;
+}
+.newsletter h1, .newsletter h2, .newsletter h3, .newsletter h4 {
+  text-align: center;
+}
+
+@media (max-width: 500px) {
+  .newsletter h1, .newsletter h2, .newsletter h3, .newsletter h4 {
+    font-size: 3em;
+  }
+}
+.news_form {
+  max-width: 900px;
+  text-align: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+}
+
+input {
+  width: 500px/2;
+  height: 50px;
+  font-family: "Poppins";
+  font-style: bold;
+  font-weight: 300;
+  font-size: 1.5em;
+  line-height: 42px;
+  text-align: center;
+  color: #DCCBC6;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 500px) {
+  input {
+    margin-right: 10px;
+    margin-bottom: 0px;
+  }
+}
+button {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1em;
+  line-height: 24px;
+  color: #967675;
+  background: #FFFFFF;
+  box-sizing: border-box;
+}
+
+.footer {
+  color: #FFFFFF;
+  background-color: #23242C;
+  padding: 100px;
+}
+.footer h4 {
+  color: white;
+}
+.footer h5 {
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: normal;
+  color: white;
+  font-size: 1em;
+  line-height: 32px;
+}
+
+@media print {
+  @page {
+    margin-left: 3cm;
+    margin-right: 3cm;
+  }
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    background: #fff !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  h3 {
+    font-size: 0.5in;
+  }
+
+  p {
+    font-size: 0, 145in;
+  }
+
+  .noprint {
+    display: none;
+  }
+
+  .assort {
+    display: block;
+  }
+
+  .printBlockFirst, .footer, .printBlockFourth, .printBlockThird, .printBlockSecond {
+    page-break-inside: avoid;
+    page-break-after: avoid;
+  }
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,270 @@
+/*
+    Подготовка к выполнению лабораторной работы – изучение элементов и возможностей работы SVG и его свойств:
+Базовые фигуры (circle, rect, ellipse, path, line, polyline и polygon);
+Путь - path;
+Группировка и повторное использование (g, def, symbol и use);
+viewBox и viewPort для SVG;
+Способы подключения SVG-графики;
+    С помощью разметки и элементов SVG создайте иконки:
+закрытия модального окна (крестик в круге),
+бургер-меню (три линии),
+поиска (лупа),
+домашней страницы (домик),
+        Иконки должны быть разноцветными, при наведении курсора они должны менять цвет, иконка бургер-меню при клике должна с помощью анимации преобразовываться в крестик.
+        Иконку поиска и домашней страницы объединить в один SVG с помощью symbol и добавить в начале страницы с помощью use.
+    А также:
+объект с повторяющимися элементами (например, снежинка, солнце с лучами);
+часы со стрелками;
+лампочку соединенную проводом (path) с кнопкой;
+Для часов анимированы стрелки. Лампочка загорается/гаснет при нажатии на кнопку.*/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Arial', sans-serif;
+}
+
+.container {
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.header {
+	background: rgb(32, 32, 32);
+}
+
+.header__inner {
+	display: flex;
+    justify-content: center;
+	align-items: center;
+	height: 100%;
+	color: #fff;
+}
+
+.header__logo {
+	width: 60px;
+}
+
+.header__info {
+	font-size: 1.5em;
+	margin-left: 25px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    display: flex;
+    background-color: grey;
+    margin-top: 10px;
+    margin-left: 30%;
+    margin-right: 30%;
+    border: 1px solid black;
+}
+
+.main__line line {
+    stroke: rgb(255, 0, 0);
+    stroke-width: 5px;
+}
+
+.main__polyline polyline {
+    stroke: rgb(255, 0, 0);
+    stroke-width: 5px;
+    fill: none;
+}
+
+.main__rect rect {
+    width: 100px;
+    height: 50px;
+    stroke: rgb(255, 0, 0);
+    stroke-width: 5px;
+    fill: rgb(0, 0, 0);
+}
+
+.main__polygon polygon {
+    stroke: rgb(255, 0, 0);
+    stroke-width: 5px;
+    fill-rule: evenodd;
+    fill: rgb(0, 0, 0);
+}
+
+.main__circle circle {
+    r: 50px;
+    stroke: rgb(255, 0, 0);
+    stroke-width: 5px;
+    fill: rgb(0, 0, 0);
+}
+
+.main__ellipse ellipse {
+    rx: 50px;
+    ry: 25px;
+    stroke: rgb(255, 0, 0);
+    stroke-width: 5px;
+    fill: rgb(0, 0, 0);
+}
+
+.main__path path {
+    stroke: rgb(255, 0, 0);
+    stroke-width: 5px;
+    fill: none;
+}
+
+.main__vievbox circle {
+    stroke: rgb(255, 0, 0);
+    stroke-width: 5px;
+    fill: rgb(0, 0, 0);
+}
+
+
+
+/*2 страница*/
+
+
+.header__menu-burger {
+    width: 4rem;
+    height: 4rem;
+    cursor: pointer;
+    transition: 0.1s;
+  }
+  
+  .menu-burger {
+    fill: white;
+  }
+  .menu-burger:hover {
+    fill: black;
+  }
+  .menu-burger g path {
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .opacity {
+    opacity: 0;
+  }
+  
+  .rotate-one {
+    transition: all 0.5s ease-in-out;
+    transform: rotate(45deg);
+    transform-origin: center center;
+  }
+  
+  .rotate-two {
+    transition: all 0.5s ease-in-out;
+    transform: rotate(-45deg);
+    transform-origin: center center;
+  }
+  
+  .search, .home {
+    width: 4rem;
+    height: 4rem;
+    fill: white;
+    transition: 0.8s;
+    cursor: pointer;
+    margin-left: 1rem;
+  }
+  .search:hover, .home:hover {
+    fill: black;
+  }
+  
+  .block {
+    margin-left: 20%;
+    margin-right: 20%;
+    width: 40%;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+  }
+  .block__svg {
+    width: 100%;
+  }
+  
+  .lamp {
+    background-color: white;
+    color: gray;
+    fill: #c9c9c9;
+    stroke: black;
+  }
+  
+  .body-lamp {
+    stroke: black;
+  }
+  
+  .cbl {
+    fill: rgba(255, 255, 255, 0);
+    stroke: black;
+  }
+  
+  .btn {
+    fill: #a04646;
+    stroke: black;
+    cursor: pointer;
+  }
+  
+  .yellow {
+    fill: #d1e958;
+  }
+  
+  .lamp-luk {
+    opacity: 0;
+    stroke-linecap: round;
+    stroke: #b9cc57;
+  }
+  
+  .yellow-luk {
+    opacity: 1;
+  }
+  
+  .body-clock {
+    fill: white;
+    stroke: black;
+  }
+  
+  .cntr-clock {
+    fill: black;
+    stroke: black;
+  }
+  
+  .arrow-min, .arrow-hour {
+    transform-origin: center center;
+    stroke: black;
+    stroke-linecap: round;
+    transform: rotate(0deg);
+  }
+  
+  .arrow-hour {
+    transform: rotate(0deg);
+  }
+  
+  .modal {
+    width: 16rem;
+    height: 16rem;
+    cursor: pointer;
+    transition: 0.8s;
+  }
+  
+  .modal:hover {
+    fill: #2342cc;
+  }
+  
+  .block-sea {
+    display: flex;
+    flex-direction: column;
+  }
+  .block-sea__h2 {
+    font-size: 3rem;
+  }
+  
+  .sea {
+    background-color: #8080ca;
+    width: 100%;
+    height: 70px;
+  }
+  
+  #line {
+    stroke: #22227b;
+    fill: rgba(255, 0, 0, 0);
+    stroke-linecap: round;
+    stroke-width: 5px;

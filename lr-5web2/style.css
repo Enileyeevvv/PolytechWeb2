@@ -1,0 +1,164 @@
+* *:before, *:after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+p, a, h1, h2, h3 {
+    text-decoration: none;
+    color: #24242E;
+    margin: 0;
+    padding: 0;
+    font-family: 'Exo 2';
+}
+
+span {
+    color: #1E489B;
+}
+
+.parallelogram {
+    width: 50px; 
+    height: 40px;
+    transform: skew(-45deg);
+}
+
+.header {
+    display: flex;
+    height: 885px;
+    justify-content: space-around;
+    background-image: url(images/header_logo.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%
+}
+
+.container {
+    width: 60%;
+    margin: 0 20%;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo {
+    width: 156px;
+}
+
+.logo p{
+    font-size: 10px;
+}
+
+.nav ul li{
+    display: inline-block;
+    margin-left: 15px; 
+}
+
+.ring {
+    text-align: right;
+}
+
+.header-title {
+    width: 60%;
+    margin-top: 100px;
+}
+
+.header-title h1{
+    font-size: 50px;
+}
+
+.header-title p{
+    font-size: 18px;
+    margin-top: 50px;
+}
+
+.header-info {
+    width: 60%;
+    display: flex;
+    margin-top: 50px;
+}
+
+.header-info-item .parallelogram {
+    background-color: #1E489B;
+}
+
+.header-info-item img {
+}
+
+.btn-application {
+    width: 250px;
+    height: 75px;
+    background-color: #1E489B;
+    color: white;
+    font-family: 'Exo 2';
+    font-size: 18px;
+    margin-top: 100px;
+    text-decoration: none;
+    border: 0;
+    outline: none;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        width: 70%;
+        margin: 0 15%;
+    }
+    .header-title {
+        width: 60%;
+        margin-top: 83px;
+    }
+    
+    .header-title h1{
+        font-size: 40px;
+    }
+    
+    .header-title p{
+        font-size: 16px;
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 80%;
+        margin: 0 9%;
+    }
+
+    .header-title {
+        width: 60%;
+        margin-top: 56px;
+    }
+    
+    .header-title h1{
+        font-size: 30px;
+    }
+    
+    .header-title p{
+        font-size: 14px;
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 485px) {
+    .container {
+        width: 95%;
+        margin: 0 2%;
+    }
+    .header-title {
+        width: 60%;
+        margin-top: 20px;
+    }
+    
+    .header-title h1{
+        font-size: 20px;
+    }
+    
+    .header-title p{
+        font-size: 12px;
+        margin-top: 50px;
+    }
+}

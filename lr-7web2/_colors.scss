@@ -1,0 +1,27 @@
+@use "sass:map";
+@use "sass:color";
+
+$page-colors: (
+    bg-color:#f1f1f5,
+    text-color: #23242C,
+);
+
+.page {
+
+  @each $status, $color in $status-colors {
+
+    &--#{$status} {
+      background: $color;
+    }
+  }
+}
+
+$weights: (
+    "light": 300,
+    "medium": 500
+);
+
+
+$bg-color: #f1f1f5;
+
+$text-color: #23242C;

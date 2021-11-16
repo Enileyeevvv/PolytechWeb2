@@ -1,0 +1,73 @@
+@use "colors" as c;
+
+@use "mixin" as m;
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+p, a, h1, h2, h3, h4, h5 {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+p, a, span {
+    @include m.textFont;
+}
+
+span {
+    font-weight: 600;
+    font-size: 1em;
+    line-height: 32px;
+    color: white;
+}
+
+h1 {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 80px;
+    line-height: 110px;
+    color: c.$text-color;
+}
+
+h2 {
+    @extend h1;
+    font-size: 2.4em;
+    line-height: 51px;
+}
+
+h3 {
+    @extend h1;
+    font-size: 3em;
+    line-height: 64px;
+    color: #967675;
+}
+
+h4 {
+    @extend h1;
+    font-size: 2.1em;
+    line-height: 32px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: c.$bg-color;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px){
+    .container {
+        width: 100%;
+    }
+}
+
+section {
+    margin-top: 200px;
+}

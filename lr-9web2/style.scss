@@ -1,0 +1,261 @@
+@import "base.scss";
+
+header {
+    display: block;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    h3 {
+        font-size: 35px;
+    }
+}
+
+.nav {
+    width: 60%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin: 10px auto;
+}
+
+.header-title {
+    margin-top: 100px;
+}
+
+.btn-application {
+    border: 1px solid #967675;
+    border-radius: 6px;
+    transition: all .2s linear;
+    padding: 10px 50px;
+}
+
+@media (min-width: 768px){
+    .burger-menu {
+        position: relative;
+        width: 40px;
+        height: 35px;
+        display: block;
+        margin-left: 10px;
+        span, :after, :before {
+            height: 3px;
+            width: 100%;
+            position: absolute;
+            background: #515758;
+            margin: 0 auto;
+        }
+        :after, :before {
+            content: '';
+        }
+        span {
+            top: 21px;
+        }
+        :after {
+            bottom: 5px;
+        }
+        :before {
+            top: 5px;
+        }
+
+    }
+}
+
+.list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    &_item {
+        max-width: 300px;
+        p {
+            padding-left: 50px;
+        }
+    }
+}
+
+.image {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    &_pic {
+        min-width: 300px;
+    }
+    &_title {
+        width: 400px;
+    }
+}
+
+@media (max-width: 768px){
+    .image {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        &_pic {
+            min-width: 300px;
+        }
+    }
+}
+
+.outRange {
+    &_name {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        p {
+            text-align: center;
+        }
+        h1 {
+            text-align: center;
+        }
+    }
+}
+
+.assort {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 100px;
+}
+
+.type {
+    width: 500px;
+    min-width: 300px;
+    background-color: #F6ECE8;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    h3 {
+        text-align: center;
+    }
+}
+
+.newsletter {
+    background-color: #F9F2EF;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    p {
+        text-align: center;
+    }
+    h1 {
+        text-align: center;
+    }
+}
+
+@media (max-width: 500px){
+    .newsletter h1{
+        font-size: 48px;
+    }
+}
+
+.news {
+    &_form {
+        max-width: 900px;
+        text-align: center;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        margin: 0 auto;
+    }
+}
+
+input{
+    width: 500px/2;
+    height: 25px*2;
+    font-family: 'Poppins';
+    font-style: bold;
+    font-weight: 300;
+    font-size: 28px;
+    line-height: 42px;
+    text-align: center;
+    color: #DCCBC6;
+    margin-bottom: 10px;
+}
+
+@media (min-width: 500px){
+    input {
+        margin-right: 10px;
+        margin-bottom: 0px;
+    }
+}
+
+button {
+    @include textFont;
+    @extend .btn-application;
+    background: #FFFFFF;
+    box-sizing: border-box;
+}
+
+.footer {
+    color: #FFFFFF;
+    background-color: #23242C;
+    padding: 100px;
+    h4 {
+        color: white;
+    } 
+    h5 {
+        font-family: 'Playfair Display';
+        font-style: normal;
+        font-weight: normal;
+        color: white;
+        font-size: 16px;
+        line-height: 32px;
+    }   
+}
+
+@media print {
+    @page {
+        margin-left: 3cm;
+        margin-right: 3cm;
+    }
+
+    *,*::before,*::after{
+        margin: 0;
+        padding: 0;
+        background: #fff !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    h3 {
+        font-size: 0.5in;
+    }
+
+    p {
+        font-size: 0,145in;
+    }
+
+    .noprint {
+        display: none;
+    }
+
+    .assort {
+        display: block;
+    }
+
+    .printBlockFirst {
+        page-break-inside: avoid;
+        page-break-after: avoid;
+    }
+
+    .printBlockSecond {
+        @extend .printBlockFirst;
+    }
+
+    .printBlockThird {
+        @extend .printBlockFirst;
+    }
+
+    .printBlockFourth {
+        @extend .printBlockFirst;
+    }
+
+    .footer {
+        @extend .printBlockFirst;
+    }
+} 

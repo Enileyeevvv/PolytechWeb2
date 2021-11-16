@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа 8</title>
+</head>
+<body>
+    <header class="header">
+		<div class="container header__inner">
+			<a href = "index.animation.html">
+                <img 
+				    src="images/logo.png"
+				    alt="Polytech"
+				    class="header__logo"
+			    >   
+            </a>
+			<div class="header__info">Енилеев Ислам, 201-321, Лабораторная работа 8</div>
+		</div>
+	</header>
+    <main>
+        <section class = "main__line">
+            <svg width="150" height="150">
+                <line
+                x1 = "5"
+                y1 = "5"
+                x2 = "105"
+                y2 = "105"
+                />
+            </svg>
+        </section>
+        <section class = "main__polyline">
+            <svg width="150" height="150">
+                <polyline
+                points = "
+                5, 5
+                5, 55
+                55, 55
+                55, 105
+                105, 105
+                "/>
+            </svg>
+        </section>
+        <section class = "main__rect">
+            <svg width="150" height="150">
+                <rect
+                x = 5
+                y = 5/>
+            </svg>
+        </section>
+        <section class = "main__polygon">
+            <svg>
+                <polygon
+                points = "
+                53,5
+                21,85
+                101,37
+                5,37
+                85,85
+                "
+                />
+            </svg>
+        </section>
+        <section class = "main__circle">
+            <svg width="150" height="150">
+                <circle 
+                cx = "55"
+                cy = "55"/>
+            </svg>
+        </section>
+        <section class = "main__ellipse">
+            <svg width="150" height="150">
+                <ellipse 
+                cx = "55"
+                cy = "30"/>
+            </svg>
+        </section>
+        <section class = "main__path">
+            <svg width="150" height="150">
+                <path
+                d ="
+                M5,5
+                v50
+                h50
+                l50,-45
+                C100,5 125,125 150,5
+                "/>
+            </svg>
+        </section>
+        <section class = "main__vievbox">
+            <svg width="150" height="150" viewBox="0 0 95 50">
+                <g>
+                    <circle cx="20" cy="25" r="15"/>
+                    <circle cx="35" cy="25" r="15"/>
+                    <circle cx="50" cy="25" r="15"/>
+                    <circle cx="65" cy="25" r="15"/>
+                </g>
+            </svg>
+        </section>
+        <section class = "main__symbol">
+            <svg width="150" height="150" viewBox="0 0 80 20">
+                <symbol id="myDot" width="10" height="10" viewBox="0 0 2 2">
+                    <circle cx="1" cy="1" r="1" />
+                </symbol>
+                <path d="M0,10 h80 M10,0 v20 M25,0 v20 M40,0 v20 M55,0 v20 M70,0 v20" fill="none" stroke="pink" />
+                <use xlink:href="#myDot" x="5"  y="5" style="opacity:1.0" />
+                <use xlink:href="#myDot" x="20" y="5" style="opacity:0.8" />
+                <use xlink:href="#myDot" x="35" y="5" style="opacity:0.6" />
+                <use xlink:href="#myDot" x="50" y="5" style="opacity:0.4" />
+                <use xlink:href="#myDot" x="65" y="5" style="opacity:0.2" />
+            </svg>
+        </section>
+        <section class = "main__symbol">
+            <svg width="150" height="150">
+                <defs>
+                    <linearGradient id="Gradient01">
+                      <stop offset="20%" stop-color="#39F" />
+                      <stop offset="90%" stop-color="#F3F" />
+                    </linearGradient>
+                </defs>
+                <rect x="10" y="10" width="100" height="50"
+                        fill="url(#Gradient01)" />
+            </svg>
+        </section>
+    </main>
+</body>
+</html>
